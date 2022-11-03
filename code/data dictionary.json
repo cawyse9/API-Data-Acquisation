@@ -1,0 +1,342 @@
+{
+  "title": "SessionData",
+  "description": "Data aggregated on session level.",
+  "type": "object",
+  "properties": {
+    "epoch_count": {
+      "title": "Epoch Count",
+      "description": "Number of epochs in the session [unitless]",
+      "type": "integer"
+    },
+    "session_start": {
+      "title": "Session Start",
+      "description": "Start time of the session (first measurement)",
+      "type": "string",
+      "format": "date-time"
+    },
+    "relative_session_start": {
+      "title": "Relative Session Start",
+      "description": "Session start in seconds after midnight (negative if before) [seconds]",
+      "type": "integer"
+    },
+    "ems_report_start": {
+      "title": "POSIX session start",
+      "description": "1000 * POSIX timestamp for session_start",
+      "type": "integer"
+    },
+    "session_end": {
+      "title": "Session End",
+      "description": "End time of the session (last measurement + 1s)",
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_at_last_epoch": {
+      "title": "Time At Last Epoch",
+      "description": "Time at last epoch",
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_at_intended_sleep": {
+      "title": "Time At Intended Sleep",
+      "description": "Intended sleep (last dimmed light or no presence before sleep onset)",
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_at_intended_wakeup": {
+      "title": "Time At Intended Wakeup",
+      "description": "Intended wakeup (first brightened light or no presence after last wakeup)",
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_in_undefined": {
+      "title": "Time In Undefined",
+      "description": "Time spent in undefined sleep stage, e.g. if data is missing [seconds]",
+      "type": "integer"
+    },
+    "time_at_sleep_onset": {
+      "title": "Time At Sleep Onset",
+      "description": "When the first sleep in session happens",
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_at_wakeup": {
+      "title": "Time At Wakeup",
+      "description": "When the final wakeup in session happens",
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_at_midsleep": {
+      "title": "Time At Midsleep",
+      "description": "Midpoint between sleep onset and wakeup",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sleep_onset_latency": {
+      "title": "Sleep Onset Latency",
+      "description": "Time from intended sleep to sleep onset [seconds]",
+      "type": "integer"
+    },
+    "sleep_period": {
+      "title": "Sleep Period",
+      "description": "Time from sleep onset to wakeup [seconds]",
+      "type": "integer"
+    },
+    "time_in_bed": {
+      "title": "Time In Bed",
+      "description": "Time between intended sleep and intended wakeup [seconds]",
+      "type": "integer"
+    },
+    "time_asleep": {
+      "title": "Time Asleep",
+      "description": "Time spent asleep [seconds]",
+      "type": "integer"
+    },
+    "sleep_efficiency": {
+      "title": "Sleep Efficiency",
+      "description": "100 * time_asleep / time_in_bed [0-100%]",
+      "type": "number"
+    },
+    "time_in_light_sleep": {
+      "title": "Time In Light Sleep",
+      "description": "Time spent in light sleep [seconds]",
+      "type": "integer"
+    },
+    "time_in_rem_sleep": {
+      "title": "Time In Rem Sleep",
+      "description": "Time spent in REM sleep [seconds]",
+      "type": "integer"
+    },
+    "time_in_deep_sleep": {
+      "title": "Time In Deep Sleep",
+      "description": "Time spent in deep sleep [seconds]",
+      "type": "integer"
+    },
+    "time_in_no_presence": {
+      "title": "Time In No Presence",
+      "description": "Time with no presence (during sleep period) [seconds]",
+      "type": "integer"
+    },
+    "number_of_times_no_presence": {
+      "title": "Number Of Times No Presence",
+      "description": "Number of separate occurrences of no presence (during sleep period) [unitless]",
+      "type": "integer"
+    },
+    "time_wake_after_sleep_onset": {
+      "title": "Time Awake During Sleep Period",
+      "description": "Time spent awake during sleep period [seconds]",
+      "type": "integer"
+    },
+    "number_of_times_awake": {
+      "title": "Number Of Times Awake",
+      "description": "Number of times awake in sleep period [unitless]",
+      "type": "integer"
+    },
+    "number_of_times_awake_long": {
+      "title": "Number Of Times Awake Long",
+      "description": "Number of times awake for >=5 consecutive epochs in sleep period [unitless]",
+      "type": "integer"
+    },
+    "time_wake_pre_post_sleep": {
+      "title": "Time Awake Before and After Sleep",
+      "description": "Sleep onset latency plus time from wakeup to intended wakeup [seconds]",
+      "type": "integer"
+    },
+    "time_from_sleep_onset_to_first_rem": {
+      "title": "Time From Sleep Onset To First Rem",
+      "description": "Time from sleep onset to first REM sleep [seconds]",
+      "type": "integer"
+    },
+    "movement_fast_sleep_period_partly_filtered_custom_mean": {
+      "title": "Mean Movement Size During Sleep Period",
+      "description": "Mean size of movements that occur during sleep period [unitless].",
+      "type": "number"
+    },
+    "rpm_non_rem_custom_mean": {
+      "title": "Mean Respiration Rate During Non-REM Sleep",
+      "description": "Mean respiration rate during non-REM sleep [RPM]",
+      "type": "number"
+    },
+    "heart_rate_non_rem_custom_mean": {
+      "title": "Mean Heart Rate During Non-REM Sleep",
+      "description": "Mean heart rate during non-REM sleep [BPM]",
+      "type": "number"
+    },
+    "external_heartrate_non_rem_custom_mean": {
+      "title": "Mean External Heart Rate During Non-REM Sleep",
+      "description": "Mean heart rate from external device during non-REM sleep [BPM]",
+      "type": "number"
+    },
+    "epochs_with_movement_pct": {
+      "title": "Percent Epochs with Movement",
+      "description": "Percent of epochs in session with movement [%]",
+      "type": "number"
+    },
+    "epochs_with_movement_during_time_in_bed_pct": {
+      "title": "Percent Epochs with Movement During Time in Bed",
+      "description": "Percent of epochs with movement during time in bed [%]",
+      "type": "number"
+    },
+    "sleep_cycles_count": {
+      "title": "Sleep Cycles Count",
+      "description": "Number of sleep cycles >15 min, determined by the occurrence of REM sleep",
+      "type": "integer"
+    },
+    "is_workday": {
+      "title": "Wakeup Day Is a Workday",
+      "description": "Whether wakeup day is a workday. Assumes workday is the same as weekday [Mon-Fri = True, Sat-Sun = False]",
+      "type": "boolean"
+    },
+    "chronotype": {
+      "title": "Chronotype",
+      "description": "MCTQ Chonotype: Midsleep on free days corrected for sleep debt [hours after midnight]",
+      "type": "number"
+    },
+    "social_jet_lag": {
+      "title": "Social Jet Lag",
+      "description": "Difference between midsleep on free days and work days [hours]",
+      "type": "number"
+    },
+    "jet_lag": {
+      "title": "Jet Lag",
+      "description": "Previous chronotype minus midsleep of session [hours]",
+      "type": "number"
+    },
+    "regularity": {
+      "title": "Regularity",
+      "description": "Sleep Regularity Index (SRI) for the last 14 days [unitless, -100-100]",
+      "type": "number"
+    },
+    "sleep_score_2_standard": {
+      "title": "Sleep Score 2 Standard",
+      "description": "Sleep score based on time in sleep stages and fragmentation [unitless, 0-100]. Adjusted for user demography.",
+      "type": "number"
+    },
+    "sleep_fragmentation": {
+      "title": "Sleep Fragmentation",
+      "description": "How fragmented the sleep is, based on 90 minute segments. Longer wake periods and fragmentation early in the night are punished harder. [unitless, 0(no fragmenation)-100]",
+      "type": "number"
+    },
+    "external_spo2_custom_mean": {
+      "title": "Mean External SpO2",
+      "description": "Mean SpO2 from external device during session [0-100]",
+      "type": "number"
+    },
+    "external_spo2_min": {
+      "title": "Minimum External SpO2",
+      "description": "Minimum SpO2 from external device during session [0-100]",
+      "type": "number"
+    },
+    "distance_during_sleep_mean": {
+      "title": "Distance During Sleep Mean",
+      "description": "Mean distance from device during epochs with sleep [m]",
+      "type": "number"
+    },
+    "distance_during_sleep_std": {
+      "title": "Distance During Sleep Std",
+      "description": "Standard deviation of distance from device during epochs with sleep [m]",
+      "type": "number"
+    },
+    "air_pressure_custom_mean": {
+      "title": "Mean Air Pressure",
+      "description": "Mean air pressure during session [Pa]",
+      "type": "number"
+    },
+    "light_ambient_custom_mean": {
+      "title": "Light Ambient Mean",
+      "description": "Mean ambient light during session [lux]",
+      "type": "number"
+    },
+    "light_ambient_before_intended_sleep_mean": {
+      "title": "Light Ambient Before Intended Sleep Mean",
+      "description": "Mean ambient light before intended sleep [lux]",
+      "type": "number"
+    },
+    "light_ambient_at_wakeup_mean": {
+      "title": "Light Ambient At Wakeup Mean",
+      "description": "Mean ambient light from last sleep to intended wakeup [lux]",
+      "type": "number"
+    },
+    "sound_amplitude_custom_mean": {
+      "title": "Sound Amplitude Mean",
+      "description": "Mean sound amplitude during session [dBA]",
+      "type": "number"
+    },
+    "sound_amplitude_during_sleep_mean": {
+      "title": "Sound Amplitude During Sleep Mean",
+      "description": "Mean sound amplitude during sleep [dBA]",
+      "type": "number"
+    },
+    "sound_amplitude_during_sleep_filtered_for_noise_mean": {
+      "title": "Mean Amplitude of Loud Sounds During Sleep",
+      "description": "Mean amplitude of sounds louder than 40 dBA during sleep [dBA]",
+      "type": "number"
+    },
+    "sound_amplitude_during_sleep_filtered_for_movement_mean": {
+      "title": "Sound Amplitude During Sleep Without Movement Mean",
+      "description": "Mean sound amplitude during sleep without movement [dBA]",
+      "type": "number"
+    },
+    "sound_amplitude_at_wakeup": {
+      "title": "Sound Amplitude At Wakeup",
+      "description": "Largest sound amplitude in the 5 last epochs before wakeup [dBA]",
+      "type": "number"
+    },
+    "epochs_with_sound_spikes_during_sleep_count": {
+      "title": "Epochs With Sound Spikes During Sleep Count",
+      "description": "Number of epochs with sound amplitude > 45 dBA [unitless]",
+      "type": "integer"
+    },
+    "awakenings_caused_by_sound_count": {
+      "title": "Awakenings Caused By Sound Count",
+      "description": "Number of awakenings coinciding with sound amplitude > mean + 10 dBA [unitless]",
+      "type": "integer"
+    },
+    "temperature_custom_mean": {
+      "title": "Mean temperature",
+      "description": "Mean ambient temperature during session [deg C]",
+      "type": "number"
+    },
+    "indoor_air_quality_custom_mean": {
+      "title": "Mean indoor air quality",
+      "description": "Mean indoor air quality during session [unitless, 0-500]",
+      "type": "number"
+    },
+    "air_humidity_custom_mean": {
+      "title": "Mean Air Humidity",
+      "description": "Mean air humidity during session [%]",
+      "type": "number"
+    }
+  },
+  "required": [
+    "epoch_count",
+    "session_start",
+    "relative_session_start",
+    "ems_report_start",
+    "session_end",
+    "time_at_last_epoch",
+    "time_at_intended_sleep",
+    "time_in_undefined",
+    "sleep_period",
+    "time_in_bed",
+    "time_asleep",
+    "sleep_efficiency",
+    "time_in_light_sleep",
+    "time_in_rem_sleep",
+    "time_in_deep_sleep",
+    "time_in_no_presence",
+    "number_of_times_no_presence",
+    "number_of_times_awake",
+    "number_of_times_awake_long",
+    "epochs_with_movement_pct",
+    "sleep_cycles_count",
+    "is_workday",
+    "sleep_score_2_standard",
+    "sleep_fragmentation",
+    "air_pressure_custom_mean",
+    "light_ambient_custom_mean",
+    "sound_amplitude_custom_mean",
+    "temperature_custom_mean",
+    "indoor_air_quality_custom_mean",
+    "air_humidity_custom_mean"
+  ]
+}
